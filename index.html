@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Klinkhammer Sister Reunion: McCall, Idaho</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fefaf5;
+    --sand: #e5dbd0;
+    --steel: #4780a8;
+    --pale-blue: #d0dae5;
+    --deep-blue: #2d5a80;
+    --dark: #1a1a1a;
+    --mid-gray: #6b6b6b;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* TOPBAR */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--cream);
+    border-bottom: 1px solid var(--sand);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 28px;
+  }
+  .topbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--steel);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .btn-pdf {
+    background: var(--steel);
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  .btn-pdf:hover { background: var(--deep-blue); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2d5a80 0%, #4780a8 50%, #1a3a52 100%);
+  }
+  .hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20,40,60,0.78), transparent 60%);
+  }
+  .hero-content {
+    position: absolute;
+    bottom: 40px;
+    left: 36px;
+    color: #fff;
+  }
+  .hero-eyebrow {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 6px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  /* TABS */
+  .tabs-wrapper {
+    background: var(--cream);
+    border-bottom: 2px solid var(--sand);
+    position: sticky;
+    top: 57px;
+    z-index: 90;
+  }
+  .tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0 24px;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 14px 18px 12px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--steel); }
+  .tab-btn.active {
+    color: var(--steel);
+    border-bottom-color: var(--steel);
+  }
+
+  /* PANELS */
+  .panel { display: none; padding: 36px 28px 60px; max-width: 820px; margin: 0 auto; }
+  .panel.active { display: block; }
+
+  /* TYPOGRAPHY */
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    color: var(--steel);
+    margin-bottom: 16px;
+    margin-top: 32px;
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--dark);
+    margin-bottom: 8px;
+    margin-top: 24px;
+  }
+  p { margin-bottom: 14px; color: var(--dark); }
+  ul { margin: 0 0 16px 20px; }
+  ul li { margin-bottom: 6px; color: var(--dark); }
+
+  /* CALLOUT BOX */
+  .callout {
+    background: var(--pale-blue);
+    border-left: 4px solid var(--steel);
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin: 24px 0;
+  }
+  .callout p { margin-bottom: 8px; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout strong { color: var(--steel); }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--sand); margin: 32px 0; }
+
+  /* CATEGORY BAND */
+  .cat-band {
+    background: var(--pale-blue);
+    border-left: 4px solid var(--steel);
+    margin: 28px -28px 18px;
+    padding: 10px 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--steel);
+  }
+
+  /* TIER LABEL */
+  .tier-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    border-bottom: 1px solid var(--sand);
+    padding-bottom: 6px;
+    margin: 24px 0 14px;
+  }
+
+  /* CARD */
+  .card {
+    background: #fff;
+    border-left: 4px solid var(--steel);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  .card-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--dark);
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 4px;
+  }
+  .card-name:hover { color: var(--steel); text-decoration: underline; text-underline-offset: 3px; }
+  .card-tag {
+    font-size: 0.82rem;
+    color: var(--mid-gray);
+    margin-bottom: 10px;
+  }
+  .card-body { font-size: 0.95rem; margin-bottom: 0; }
+  .card-detail {
+    font-size: 0.88rem;
+    color: var(--mid-gray);
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+  .card-detail strong { color: var(--dark); }
+  .new-badge {
+    display: inline-block;
+    background: var(--steel);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* DRINK ITEM */
+  .drink-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--sand);
+  }
+  .drink-item:last-child { border-bottom: none; }
+  .drink-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .drink-name:hover { color: var(--steel); text-decoration: underline; text-underline-offset: 3px; }
+  .drink-meta { font-size: 0.85rem; color: var(--mid-gray); margin-bottom: 6px; }
+  .drink-desc { font-size: 0.95rem; margin-bottom: 0; }
+  .happy-hour-tag {
+    display: inline-block;
+    background: #f0f7f0;
+    border: 1px solid #8fbc8f;
+    color: #3a7a3a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-top: 6px;
+  }
+
+  /* ACTIVITY ITEM */
+  .activity-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--sand);
+  }
+  .activity-item:last-child { border-bottom: none; }
+  .activity-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--dark);
+    text-decoration: none;
+    margin-bottom: 4px;
+  }
+  .activity-name:hover { color: var(--steel); text-decoration: underline; text-underline-offset: 3px; }
+  .activity-desc { font-size: 0.95rem; margin-bottom: 0; }
+
+  /* DAY CARDS */
+  .day-card { margin-bottom: 28px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+  .day-header {
+    background: var(--steel);
+    color: #fff;
+    padding: 10px 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .day-title {
+    background: var(--pale-blue);
+    padding: 10px 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--deep-blue);
+    font-style: italic;
+  }
+  .day-body {
+    background: #fff;
+    padding: 16px 20px;
+  }
+  .day-body ul { margin: 0 0 0 18px; }
+  .day-body li { margin-bottom: 7px; font-size: 0.95rem; }
+
+  /* PRACTICAL */
+  .prac-section { margin-bottom: 28px; }
+  .prac-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--sand);
+  }
+
+  /* NEIGHBORHOOD */
+  .neighborhood { margin-bottom: 22px; }
+  .neighborhood-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--steel);
+    margin-bottom: 4px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--sand);
+    text-align: center;
+    padding: 22px;
+    font-size: 0.82rem;
+    color: var(--mid-gray);
+    letter-spacing: 0.04em;
+  }
+  footer a { color: var(--steel); text-decoration: none; }
+
+  /* EVENT ITEM */
+  .event-item {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--sand);
+  }
+  .event-item:last-child { border-bottom: none; }
+  .event-name {
+    display: block;
+    font-weight: 700;
+    font-size: 1.02rem;
+    color: var(--dark);
+    text-decoration: none;
+    margin-bottom: 3px;
+  }
+  .event-name:hover { color: var(--steel); text-decoration: underline; text-underline-offset: 3px; }
+  .event-meta {
+    font-size: 0.83rem;
+    color: var(--mid-gray);
+    margin-bottom: 8px;
+  }
+  .event-desc { font-size: 0.95rem; margin-bottom: 0; }
+  .event-tip {
+    font-size: 0.85rem;
+    color: var(--mid-gray);
+    margin-top: 6px;
+    margin-bottom: 0;
+  }
+  .event-tip strong { color: var(--dark); }
+
+  /* CONCERT ROW */
+  .concert-list { margin: 10px 0 0 0; padding: 0; list-style: none; }
+  .concert-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--sand);
+    color: var(--dark);
+  }
+  .concert-list li:last-child { border-bottom: none; }
+  .concert-date { color: var(--mid-gray); font-size: 0.85rem; white-space: nowrap; margin-left: 12px; }
+
+
+  @media print {
+    .topbar, .tabs-wrapper { display: none !important; }
+    .panel { display: block !important; page-break-after: always; padding: 0; max-width: 100%; }
+    .panel:last-of-type { page-break-after: avoid; }
+    .cat-band { margin-left: 0; margin-right: 0; }
+    @page { margin: 0.65in; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    .panel { padding: 24px 18px 48px; }
+    .cat-band { margin: 24px -18px 14px; }
+    .hero { height: 300px; }
+    .hero-content { left: 20px; bottom: 28px; }
+    .topbar { padding: 10px 16px; }
+    .tab-btn { padding: 12px 13px 10px; font-size: 0.8rem; }
+  }
+
+  /* DARK MODE */
+  @media (prefers-color-scheme: dark) {
+    html, body { background: #1a1a1a !important; color: #f0ece6 !important; }
+    .topbar { background: #1a1a1a !important; border-bottom-color: #333 !important; }
+    .topbar-brand { color: #7aafd4 !important; }
+    .tabs-wrapper { background: #1a1a1a !important; border-bottom-color: #333 !important; }
+    .tab-btn { color: #888 !important; }
+    .tab-btn.active, .tab-btn:hover { color: #7aafd4 !important; }
+    .tab-btn.active { border-bottom-color: #7aafd4 !important; }
+    .panel { background: #1a1a1a !important; }
+    h2 { color: #7aafd4 !important; }
+    h3 { color: #f0ece6 !important; }
+    p, li { color: #d8d2cb !important; }
+    .callout { background: #263040 !important; border-left-color: #7aafd4 !important; }
+    .callout p { color: #d8d2cb !important; }
+    .callout strong { color: #7aafd4 !important; }
+    .cat-band { background: #263040 !important; color: #7aafd4 !important; border-left-color: #7aafd4 !important; }
+    .tier-label { color: #888 !important; border-bottom-color: #333 !important; }
+    .card { background: #242424 !important; border-left-color: #7aafd4 !important; box-shadow: none !important; }
+    .card-name { color: #f0ece6 !important; }
+    .card-name:hover { color: #7aafd4 !important; }
+    .card-tag { color: #888 !important; }
+    .card-body { color: #d8d2cb !important; }
+    .card-detail { color: #888 !important; }
+    .card-detail strong { color: #d8d2cb !important; }
+    .drink-item { border-bottom-color: #333 !important; }
+    .drink-name { color: #f0ece6 !important; }
+    .drink-name:hover { color: #7aafd4 !important; }
+    .drink-meta { color: #888 !important; }
+    .drink-desc { color: #d8d2cb !important; }
+    .activity-item { border-bottom-color: #333 !important; }
+    .activity-name { color: #f0ece6 !important; }
+    .activity-name:hover { color: #7aafd4 !important; }
+    .activity-desc { color: #d8d2cb !important; }
+    .divider { border-top-color: #333 !important; }
+    .day-card { box-shadow: none !important; }
+    .day-header { background: #2d5a80 !important; }
+    .day-title { background: #263040 !important; color: #7aafd4 !important; }
+    .day-body { background: #242424 !important; }
+    .day-body li { color: #d8d2cb !important; }
+    .prac-label { color: #7aafd4 !important; border-bottom-color: #333 !important; }
+    .prac-section ul li { color: #d8d2cb !important; }
+    .neighborhood-name { color: #7aafd4 !important; }
+    footer { background: #111 !important; color: #666 !important; }
+    footer a { color: #7aafd4 !important; }
+    .new-badge { background: #2d5a80 !important; }
+    .happy-hour-tag { background: #1a2e1a !important; border-color: #4a8a4a !important; color: #8fbc8f !important; }
+    .event-item { border-bottom-color: #333 !important; }
+    .event-name { color: #f0ece6 !important; }
+    .event-name:hover { color: #7aafd4 !important; }
+    .event-meta { color: #888 !important; }
+    .event-desc { color: #d8d2cb !important; }
+    .event-tip { color: #888 !important; }
+    .event-tip strong { color: #d8d2cb !important; }
+    .concert-list li { color: #d8d2cb !important; border-bottom-color: #333 !important; }
+    .concert-date { color: #888 !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span class="topbar-brand">Travel Curated by Colby</span>
+  <button class="btn-pdf" onclick="window.print()">Save as PDF</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="mccall-sunset-hero.jpg" alt="Sunset over Payette Lake, McCall Idaho" onerror="this.style.display='none'">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">2026 Klinkhammer Sister Reunion</div>
+    <h1 class="hero-title">McCall, Idaho</h1>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('overview', this)">Overview</button>
+    <button class="tab-btn" onclick="showTab('todo', this)">Things To Do</button>
+    <button class="tab-btn" onclick="showTab('dining', this)">Dining</button>
+    <button class="tab-btn" onclick="showTab('shopping', this)">Shopping</button>
+    <button class="tab-btn" onclick="showTab('itinerary', this)">Itinerary</button>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div id="overview" class="panel active">
+  <h2>About McCall</h2>
+  <p>McCall is a small mountain town on the southern shore of Payette Lake, sitting at 5,026 feet about 107 miles north of Boise. What makes it special is the proximity to wild spaces — whether you want a completely laidback lake weekend or something more active, both are fully possible here.</p>
+  <p>The town has a natural identity shift by season: summer turns it into a beach town with swimming, kayaking, and fishing on glacially-carved Payette Lake, and winter transforms it into a ski destination with multiple mountains within 30 minutes. It's genuine four-season Idaho — casual, outdoorsy, and unpretentious.</p>
+
+  <div class="callout">
+    <p><strong>Best time to visit:</strong> Summer (June–August) for lake life and long days; late January–early February for the Winter Carnival and peak ski season; fall for fewer crowds.</p>
+    <p><strong>Recommended stay:</strong> 3–4 nights minimum; 5–6 nights for a full active itinerary.</p>
+  </div>
+
+  <ul>
+    <li>Population ~3,000 — small town feel with a surprisingly good dining and brewery scene</li>
+    <li><strong>Getting here —</strong> Fly into Boise (BOI), then drive HWY 55 North — about two hours through the scenic Payette River canyon</li>
+    <li>A car is essential; no rideshare in McCall</li>
+    <li>Mountain time zone (same as Boise)</li>
+    <li>Summer lake temperatures are cold even in August — the lake is glacier-fed</li>
+    <li>Brundage Mountain averages 300+ inches of snowfall annually</li>
+  </ul>
+
+  <hr class="divider">
+  <h2>Neighborhoods</h2>
+
+  <div class="neighborhood">
+    <div class="neighborhood-name">Downtown McCall</div>
+    <p>The walkable core of town along Lake Street and N. 3rd. Restaurants, breweries, Legacy Park beach access, and the historic train depot (home to Salmon River Brewery).</p>
+  </div>
+
+  <div class="neighborhood">
+    <div class="neighborhood-name">Shore Lodge / West Lake</div>
+    <p>About a mile west of downtown on the lake's south shore. This is where we're staying at The Oneys Cabin. Quieter and more resort-feeling, with Shore Lodge's restaurants and spa anchoring the area. Rotary Park is conveniently located right across the street — a beautiful spot to take a dip and take in the views.</p>
+  </div>
+
+  <div class="neighborhood">
+    <div class="neighborhood-name">Ponderosa State Park</div>
+    <p>A beautiful spot 1.5 miles north of downtown on a peninsula jutting into Payette Lake. A great place for hiking, biking, swimming, and a beach picnic. Don't forget to drive to The Narrows Overlook for the best views of the lake.</p>
+  </div>
+
+  <div class="neighborhood">
+    <div class="neighborhood-name">East Valley / Jug Mountain Ranch</div>
+    <p>About 10 minutes southeast of town. Home to Jug Mountain Ranch golf course and Nordic ski trails. Quiet residential feel.</p>
+  </div>
+
+  <div class="neighborhood">
+    <div class="neighborhood-name">Tamarack / Donnelly</div>
+    <p>20 minutes south on HWY 55. A separate ski resort village worth a day trip in winter for skiing and in summer for golf at Osprey Meadows.</p>
+  </div>
+</div>
+
+<!-- THINGS TO DO -->
+<div id="todo" class="panel">
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Ponderosa+State+Park+McCall+Idaho" target="_blank" rel="noopener noreferrer">Ponderosa State Park</a>
+    <p class="activity-desc">A 1,000-acre peninsula jutting into Payette Lake just 1.5 miles from downtown. Year-round hiking and biking trails, beach access, and sweeping views from Osprey Cliff Overlook.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Legacy+Park+McCall+Idaho" target="_blank" rel="noopener noreferrer">Legacy Park &amp; Downtown Waterfront</a>
+    <p class="activity-desc">Free public beach access right in the heart of downtown. Splash fountain, picnic areas, and walking paths connecting to Ponderosa State Park. Easy activity for all ages, all seasons — and the main hub for both the 4th of July Lakeside Liberty Fest and Winter Carnival events.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Shore+Lodge+The+Cove+spa+McCall+Idaho" target="_blank" rel="noopener noreferrer">The Cove Spa at Shore Lodge</a>
+    <p class="activity-desc">Shore Lodge's full-service spa with private outdoor hot springs, saltwater immersion pools, saunas, and steam rooms. The outdoor hot springs are accessible after booking a massage, facial, or body treatment — and are particularly special in winter when snow is falling around you and Payette Lake is in the background. Worth booking in advance; treatments fill up quickly on weekends and during Winter Carnival.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Payette+Lake+McCall+Idaho" target="_blank" rel="noopener noreferrer">Payette Lake</a>
+    <p class="activity-desc">The centerpiece of McCall — 5,330 acres of glacially-carved water perfect for swimming, sailing, kayaking, canoeing, paddleboarding, and fishing. Popular beaches include North Beach and Legacy Park right downtown. Lake is cold even in August (glacier-fed), so bring a wetsuit for extended water time.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=The+Meanders+North+Fork+Payette+River+McCall+Idaho" target="_blank" rel="noopener noreferrer">The Meanders — Upper North Fork Payette River</a>
+    <p class="activity-desc">McCall's best-kept local secret. A serene, 3-mile stretch of flatwater on the Upper North Fork of the Payette River — no motorized watercraft allowed. Gentle S-curves through lush forest where you're likely to spot deer, elk, eagles, osprey, otters, and the occasional moose. Pack a picnic and stop at the sandy beaches along the way. Access via Warren Wagon Road north of town; put in at the North Beach boat launch (~8 miles from the turnoff). Rentals available at Backwoods Adventures downtown.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=McCall+Lake+Cruises+Payette+Lake" target="_blank" rel="noopener noreferrer">McCall Lake Cruises</a>
+    <p class="activity-desc">90-minute daytime cruises most afternoons at 1pm — great for families. 2-hour Sunset and Cocktail Cruises at 7pm and Thursday evening adult-only cocktail cruises with live music. Book ahead in peak season.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Brundage+Mountain+summer+McCall+Idaho" target="_blank" rel="noopener noreferrer">Brundage Mountain (Summer)</a>
+    <p class="activity-desc">In summer, Brundage transforms into an adventure hub with scenic chairlift rides to the 7,800-foot summit, guided mountain bike tours, disc golf, hiking trails, and free Friday evening concerts (TGIF Concert Series, every Friday through Labor Day).</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=McCall+Farmers+Market+McCall+Idaho" target="_blank" rel="noopener noreferrer">McCall Farmers Market</a>
+    <p class="activity-desc">Mid-June through September, Wednesdays &amp; Saturdays 10am–1pm at 2nd St. &amp; Lenora St. downtown — free to attend. Grassfed beef and pork, Idaho honey, fresh goat cheese, microgreens, lavender, baked goods, fresh juices, and arts and crafts vendors. Full Moon Ice Cream sets up here on market days — their key lime pie and seasonal flavors are the best in McCall. Worth building a morning around. Not dog-friendly; cash helpful for vendors.</p>
+  </div>
+</div>
+
+<!-- DINING -->
+<div id="dining" class="panel">
+
+  <div class="cat-band">☕ Breakfast &amp; Coffee</div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=Alpine+Pantry+Provisions+McCall+Idaho" target="_blank" rel="noopener noreferrer">Alpine Pantry &amp; Provisions</a>
+    <div class="card-tag">Breakfast &amp; Brunch · Downtown McCall · $</div>
+    <p class="card-body">Lakefront breakfast and brunch spot with patio dining right on the water. Serves all-day breakfast including omelets, benedicts, pancakes, and sandwiches. The views from the patio alone make it worth the stop.</p>
+    <p class="card-detail"><strong>Order:</strong> Anything off the Benedict menu</p>
+    <p class="card-detail"><strong>Reservations:</strong> No</p>
+  </div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=The+Den+on+Payette+McCall+Idaho" target="_blank" rel="noopener noreferrer">The Den on Payette</a>
+    <div class="card-tag">Breakfast &amp; Brunch · Downtown McCall (317 E. Lake St.) · $</div>
+    <p class="card-body">McCall's favorite breakfast and brunch spot right on the shores of Payette Lake. Known for house-smoked meats, generous portions, and quality coffee — the brisket omelet and sweet potato bowl are the standout dishes. Rated 4.6 stars with a loyal local following. Natural wood tones, lake views, and genuine hospitality.</p>
+    <p class="card-detail"><strong>Order:</strong> Brisket omelet or sweet potato bowl</p>
+    <p class="card-detail"><strong>Hours:</strong> Daily 7am–3pm · Closed Wednesdays · No reservations</p>
+  </div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=Fogglifter+Cafe+McCall+Idaho" target="_blank" rel="noopener noreferrer">Fogglifter Café</a>
+    <div class="card-tag">Breakfast &amp; Lunch · Downtown McCall · $</div>
+    <p class="card-body">A local staple with classic American breakfast and lunch — Eggs Benedict, Huevos Rancheros, and freshly baked bagels in partnership with Blue Sky Bagels. Counter service with indoor seating and a patio. Open until 2pm daily.</p>
+    <p class="card-detail"><strong>Order:</strong> Eggs Benedict or a Blue Sky bagel sandwich</p>
+    <p class="card-detail"><strong>Reservations:</strong> No — arrive early on weekends</p>
+  </div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=Stacey+Cakes+McCall+Idaho" target="_blank" rel="noopener noreferrer">Stacey Cakes</a>
+    <div class="card-tag">Bakery · Downtown McCall · $</div>
+    <p class="card-body">An artisan bakery beloved for handmade ginger snaps, salted caramel cheesecake, lemon tarts, and cinnamon rolls. Also does savory quiche. A McCall must-stop.</p>
+    <p class="card-detail"><strong>Order:</strong> Salted caramel cheesecake or a cinnamon roll</p>
+    <p class="card-detail"><strong>Reservations:</strong> No</p>
+  </div>
+
+  <div class="cat-band">🍽 Lunch &amp; Dinner</div>
+
+  <div class="tier-label">Budget &amp; Casual · $</div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=My+Fathers+Place+McCall+Idaho" target="_blank" rel="noopener noreferrer">My Father's Place</a>
+    <div class="card-tag">Burgers · Downtown McCall · $</div>
+    <p class="card-body">McCall's go-to classic burger joint. Nothing fancy — just a well-made burger and fries when that's exactly what you want.</p>
+    <p class="card-detail"><strong>Order:</strong> Classic cheeseburger and fries</p>
+    <p class="card-detail"><strong>Reservations:</strong> No</p>
+  </div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=Evening+Rise+Bread+Company+McCall+Idaho" target="_blank" rel="noopener noreferrer">Evening Rise Bread Co</a>
+    <div class="card-tag">Sandwiches &amp; Artisan Bread · McCall (303 Sunset St.) · $</div>
+    <p class="card-body">McCall's best sandwiches — and some of the best you'll find anywhere in Idaho. Made on house-baked bread with hand-sliced meats and cheeses, and an extensive topping list you fill out on an order slip. Portions are enormous; many people share one. Grab a loaf to take home while you're there. Arrive right when they open because a line forms fast and they sell out of bread. P.S. Skip the cookies, they're not worth it.</p>
+    <p class="card-detail"><strong>Order:</strong> Build your own sandwich — arrive at opening or risk selling out</p>
+    <p class="card-detail"><strong>Hours:</strong> Tue, Thu &amp; Sun noon–4pm only · Hours are unreliable even on open days — follow on Facebook before making the trip · No reservations</p>
+  </div>
+
+  <div class="tier-label">Mid-Range · $$</div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=The+Cutwater+Payette+Lake+Shore+Lodge+McCall+Idaho" target="_blank" rel="noopener noreferrer">The Cutwater on Payette Lake</a>
+    <div class="card-tag">American · Shore Lodge (501 W. Lake St.) · $$</div>
+    <p class="card-body">Shore Lodge's all-day lakeside restaurant — a lively, family-friendly spot with a 2,000-gallon saltwater fish tank, an analog game room, and some of the best lake views in McCall. Open for breakfast through dinner daily. The seasonal outdoor patio overlooking Payette Lake is the main draw. Solid across the board — better for a relaxed lakeside meal than a serious dinner (that's what The Narrows is for).</p>
+    <p class="card-detail"><strong>Order:</strong> Daily fresh special; spinach artichoke dip to start</p>
+    <p class="card-detail"><strong>Hours:</strong> Daily 7am–10pm · Reservations via OpenTable recommended on weekends</p>
+  </div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=Lago+Chapala+Mexican+Restaurant+McCall+Idaho" target="_blank" rel="noopener noreferrer">Lago Chapala Mexican Restaurant</a>
+    <div class="card-tag">Mexican · Downtown McCall (317 E. Lake St.) · $$</div>
+    <p class="card-body">A family-owned Mexican restaurant with one of the best lakeside patios in McCall — especially at sunset. Strong margaritas, generous chips and salsa from the start, and consistently praised carne asada tacos and enchiladas. Stick to the classics and you won't be disappointed.</p>
+    <p class="card-detail"><strong>Order:</strong> Carne asada tacos, the #9 enchilada plate, skinny margarita</p>
+    <p class="card-detail"><strong>Hours:</strong> Mon–Sat noon–9pm · Closed Sundays · No reservations</p>
+  </div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=Frenchies+on+3rd+McCall+Idaho" target="_blank" rel="noopener noreferrer">Frenchie's on 3rd</a>
+    <div class="card-tag">French / Cajun · Downtown McCall · $$</div>
+    <p class="card-body">A French and Creole/Cajun spot that's quickly become a local favorite. A genuinely unique dining experience for McCall — not your typical mountain town fare.</p>
+    <p class="card-detail"><strong>Order:</strong> Caesar salad, the DAT burgers</p>
+    <p class="card-detail"><strong>Reservations:</strong> Email for large groups; walk-in for smaller parties</p>
+  </div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=Salmon+River+Brewery+McCall+Idaho" target="_blank" rel="noopener noreferrer">Salmon River Brewery</a>
+    <div class="card-tag">Brewpub · Downtown McCall (historic train depot) · $$</div>
+    <p class="card-body">Family-friendly brewpub in McCall's beautifully restored old train depot next to Legacy Park and Payette Lake. Rooftop deck in summer, outdoor fire pit in winter. Up to 18 craft beers on tap. Live music Thursday nights.</p>
+    <p class="card-detail"><strong>Order:</strong> Elk burger or street tacos from the rooftop deck</p>
+    <p class="card-detail"><strong>Reservations:</strong> No</p>
+  </div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=Steamers+Steak+Seafood+McCall+Idaho" target="_blank" rel="noopener noreferrer">Steamers Steak &amp; Seafood</a>
+    <div class="card-tag">Steakhouse / Seafood · Downtown McCall · $$</div>
+    <p class="card-body">Local supper club vibe — steaks, seafood, and wine in a cozy space with an Old West feel and rustic décor. Consistently well-reviewed for food quality and value.</p>
+    <p class="card-detail"><strong>Order:</strong> Idaho Ruby Rainbow trout or the Cajun ribeye</p>
+    <p class="card-detail"><strong>Reservations:</strong> No — arrive early on weekends to avoid a wait</p>
+  </div>
+
+  <div class="tier-label">Splurge · $$$</div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=Ruperts+at+Hotel+McCall+Idaho" target="_blank" rel="noopener noreferrer">Rupert's at Hotel McCall</a>
+    <div class="card-tag">New American / Pacific Northwest · Downtown McCall · $$$</div>
+    <p class="card-body">Led by James Beard-nominated Chef Gary Kucy, with influences from the Southwest, Asia, and Mediterranean. Sources local farmers market produce, wild mushrooms, huckleberries, and artisan bread from McCall vendors. Beautiful lake views from the patio and dining room.</p>
+    <p class="card-detail"><strong>Order:</strong> Ramen with miso-coconut broth, Idaho flat iron steak, or the rotating fresh seafood special</p>
+    <p class="card-detail"><strong>Reservations:</strong> Strongly recommended via OpenTable. Open Wed–Sun from 2:30pm. Closed Tuesdays.</p>
+  </div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=The+Narrows+Steakhouse+Shore+Lodge+McCall+Idaho" target="_blank" rel="noopener noreferrer">The Narrows Steakhouse at Shore Lodge</a>
+    <div class="card-tag">Steakhouse / Pacific Northwest · Shore Lodge · $$$</div>
+    <p class="card-body">One of Idaho's best-reviewed fine dining rooms. AAA Four Diamond. Prime-aged Idaho beef from Double R Ranch, Snake River Farms Kurobuta pork chop, dry-aged bison cowboy steak, and seared ahi. Panoramic Payette Lake views. Award-winning wine list with 450+ selections.</p>
+    <p class="card-detail"><strong>Order:</strong> Double R Ranch ribeye or the bison cowboy steak</p>
+    <p class="card-detail"><strong>Reservations:</strong> Recommended. Open daily 5:30–10pm.</p>
+  </div>
+
+  <div class="cat-band">🍦 Ice Cream</div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=Ice+Cream+Alley+McCall+Idaho" target="_blank" rel="noopener noreferrer">Ice Cream Alley</a>
+    <div class="card-tag">Ice Cream · Downtown McCall · $</div>
+    <p class="card-body">The McCall institution — rated 4.6 on TripAdvisor with 266+ reviews. Legendary for towering scoops in flavors like huckleberry cheesecake, peanut butter chocolate, lemon pie, and classic cookies and cream. Even a single scoop is generously sized. Lines get long in summer but move quickly.</p>
+    <p class="card-detail"><strong>Order:</strong> Huckleberry cheesecake or lemon pie scoop</p>
+    <p class="card-detail"><strong>Note:</strong> Cash only. Groups of 8+ are charged an automatic 18% gratuity.</p>
+  </div>
+
+  <div class="card">
+    <a class="card-name" href="https://www.google.com/maps/search/?api=1&query=Squatch+Sweets+McCall+Idaho" target="_blank" rel="noopener noreferrer">Squatch Sweets</a>
+    <div class="card-tag">Ice Cream &amp; Candy · 317 E. Lake St., Downtown McCall · $</div>
+    <p class="card-body">A woman-owned McCall original run by two sisters. Premium soft serve, hand-dipped hard scoop (partnered with Boise's Stella's Ice Cream), gourmet milkshakes, and their signature "Extreme Ice Creams" — over-the-top creations finished with edible glitter. The "Notorious B.I.G.foot" and "Sassy-Squatch" are the ones to order. Their sister shop, Squatch Candy Company, does gourmet chocolates, fudge, caramel apples, and specialty popcorn nearby.</p>
+    <p class="card-detail"><strong>Order:</strong> Notorious B.I.G.foot or the mint Oreo shake</p>
+    <p class="card-detail"><strong>Hours:</strong> Thu–Sun, 12–6pm (Fri–Sat until 7pm, Sun until 5pm)</p>
+  </div>
+
+</div>
+
+<!-- SHOPPING -->
+<div id="shopping" class="panel">
+  <h2>Shopping Downtown</h2>
+  <p>McCall's downtown shopping is walkable and clustered along 2nd and 3rd Streets — easy to build into a farmers market morning or a between-activities break.</p>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Wild+Onion+McCall+Idaho" target="_blank" rel="noopener noreferrer">Wild Onion</a>
+    <p class="activity-desc">A global-flavored home and gift shop next door to McCall Brewing Company — imports, furniture, home decor, art, candles, women's clothing, and jewelry sourced from around the world. Open daily; a fun browse even if you're not buying.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Rustic+Outlet+McCall+Idaho" target="_blank" rel="noopener noreferrer">Rustic Outlet</a>
+    <p class="activity-desc">A co-op marketplace featuring vintage dealers and local Idaho artists — the largest vintage/antique store in McCall. Great for one-of-a-kind gifts, home decor, and collectibles; open daily except Tuesdays.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Talon+Wren+McCall+Idaho" target="_blank" rel="noopener noreferrer">Talon Wren</a>
+    <p class="activity-desc">An artisan, vintage, and specialty foods marketplace downtown — a mix of local gifts, home goods, and gourmet finds worth a quick browse.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Backcountry+Boutique+McCall+Idaho" target="_blank" rel="noopener noreferrer">Backcountry Boutique</a>
+    <p class="activity-desc">McCall's largest women's clothing selection — tops, dresses, loungewear, accessories, and shoes, plus gifts, journals, and a strong toy/game selection for kids. Closed Sundays.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Flying+M+Coffee+Lakeside+McCall+Idaho" target="_blank" rel="noopener noreferrer">Flying M Coffee Lakeside</a>
+    <p class="activity-desc">Coffee shop, bakery, and gift shop on the lake — house-roasted coffee, scratch-made pastries, and the same quirky gift-shop charm the Flying M brand is known for in Boise. A good stop for coffee and a browse in one visit.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Bella+Kitchen+McCall+Idaho" target="_blank" rel="noopener noreferrer">Bella Kitchen</a>
+    <p class="activity-desc">A full-service gourmet kitchen shop upstairs at the Hotel McCall Courtyard, between Salmon River Brewery and Fogglifter Café — cookware, tableware, glassware, wine accessories, and home decor. A fun browse for anyone who likes to cook or entertain.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Monkey+Love+McCall+Idaho" target="_blank" rel="noopener noreferrer">Monkey Love</a>
+    <p class="activity-desc">A colorful clothing and gift collective downtown — bold prints, jewelry, shoes, and unique gifts for women, men, babies, and even pets. Historic building, modern vibe, and a local favorite for updating a wardrobe.</p>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<div id="itinerary" class="panel">
+  <h2>Sister Reunion Itinerary</h2>
+  <p style="color:var(--mid-gray); font-size:0.9rem; margin-bottom:28px; font-style:italic;">Monday, August 17 – Friday, August 21, 2026.</p>
+
+  <div class="day-card">
+    <div class="day-header">Day 1 · Mon, Aug 17</div>
+    <div class="day-title">Arrival Day + Drive to McCall</div>
+    <div class="day-body">
+      <ul>
+        <li>Arrival in Boise</li>
+        <li>Lunch at Colby &amp; Jason's — bonus: meet baby Braeden!</li>
+        <li>Drive up to McCall — take in the beautiful Payette River canyon views on this 2 hour drive</li>
+        <li>Check in and get settled, quick grocery run</li>
+        <li>Walk Legacy Park to get everyone oriented downtown</li>
+        <li>Casual welcome Mexican dinner at Lago Chapala Restaurant to kick off the reunion</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header">Day 2 · Tue, Aug 18</div>
+    <div class="day-title">Sunset Cruise</div>
+    <div class="day-body">
+      <ul>
+        <li>Breakfast at the house followed by a visit to Ponderosa State Park to take a stroll and check out the scenic overlook</li>
+        <li>Lunch at the house — Molly</li>
+        <li>Early dinner at the house — Lori and Lisa</li>
+        <li>Leave the house by 6:10 for the boat ride</li>
+        <li>Evening Sunset Cruise around the lake, 7–9pm</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header">Day 3 · Wed, Aug 19</div>
+    <div class="day-title">Farmers Market</div>
+    <div class="day-body">
+      <ul>
+        <li>Morning at McCall Farmers Market, runs 10am–1pm</li>
+        <li>Check out downtown shops</li>
+        <li>Free afternoon and evening</li>
+        <li>Dinner and games at the house — Jan and Jill</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header">Day 4 · Thu, Aug 20</div>
+    <div class="day-title">Dinner on the Patio at Cutwater</div>
+    <div class="day-body">
+      <ul>
+        <li>Free day — beach time, hiking, games</li>
+        <li>Lunch at the house — Gail and Sue</li>
+        <li>Evening: Dinner on the outdoor patio at The Cutwater, Shore Lodge's lakeside restaurant — 6:30pm reservation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header">Day 5 · Fri, Aug 21</div>
+    <div class="day-title">Departure Day</div>
+    <div class="day-body">
+      <ul>
+        <li>Pack up, clean, and check out</li>
+        <li>Drive back to Boise</li>
+        <li>Fly home from Boise Airport</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://travelcuratedbycolby.com" target="_blank" rel="noopener noreferrer">travelcuratedbycolby.com</a>
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
