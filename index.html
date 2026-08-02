@@ -405,10 +405,10 @@
   @media print {
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
     .topbar, .tabs-wrapper { display: none !important; }
-    .panel { display: block !important; page-break-after: always; padding: 0; max-width: 100%; }
+    .panel { display: block !important; page-break-after: always; padding: 28px 34px 48px !important; max-width: 100%; box-sizing: border-box; }
     .panel:last-of-type { page-break-after: avoid; }
-    .cat-band { margin-left: 0; margin-right: 0; }
-    @page { margin: 0.65in; }
+    .cat-band { margin: 24px -34px 16px !important; }
+    @page { margin: 0.5in; }
 
     .hero {
       height: 280px;
