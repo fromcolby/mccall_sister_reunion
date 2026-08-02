@@ -403,11 +403,22 @@
 
 
   @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
     .topbar, .tabs-wrapper { display: none !important; }
     .panel { display: block !important; page-break-after: always; padding: 0; max-width: 100%; }
     .panel:last-of-type { page-break-after: avoid; }
     .cat-band { margin-left: 0; margin-right: 0; }
     @page { margin: 0.65in; }
+
+    .hero {
+      height: 280px;
+      page-break-inside: avoid;
+      background-image: url('mccall-sunset-hero.jpg');
+      background-size: cover;
+      background-position: center 60%;
+    }
+    .hero img { display: none !important; }
+    .hero-overlay { background: linear-gradient(to top, rgba(20,40,60,0.85), rgba(20,40,60,0.2) 65%) !important; }
   }
 
   /* MOBILE */
@@ -572,18 +583,8 @@
   </div>
 
   <div class="activity-item">
-    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Shore+Lodge+The+Cove+spa+McCall+Idaho" target="_blank" rel="noopener noreferrer">The Cove Spa at Shore Lodge</a>
-    <p class="activity-desc">Shore Lodge's full-service spa with private outdoor hot springs, saltwater immersion pools, saunas, and steam rooms. The outdoor hot springs are accessible after booking a massage, facial, or body treatment — and are particularly special in winter when snow is falling around you and Payette Lake is in the background. Worth booking in advance; treatments fill up quickly on weekends and during Winter Carnival.</p>
-  </div>
-
-  <div class="activity-item">
     <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Payette+Lake+McCall+Idaho" target="_blank" rel="noopener noreferrer">Payette Lake</a>
     <p class="activity-desc">The centerpiece of McCall — 5,330 acres of glacially-carved water perfect for swimming, sailing, kayaking, canoeing, paddleboarding, and fishing. Popular beaches include North Beach and Legacy Park right downtown. Lake is cold even in August (glacier-fed), so bring a wetsuit for extended water time.</p>
-  </div>
-
-  <div class="activity-item">
-    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=The+Meanders+North+Fork+Payette+River+McCall+Idaho" target="_blank" rel="noopener noreferrer">The Meanders — Upper North Fork Payette River</a>
-    <p class="activity-desc">McCall's best-kept local secret. A serene, 3-mile stretch of flatwater on the Upper North Fork of the Payette River — no motorized watercraft allowed. Gentle S-curves through lush forest where you're likely to spot deer, elk, eagles, osprey, otters, and the occasional moose. Pack a picnic and stop at the sandy beaches along the way. Access via Warren Wagon Road north of town; put in at the North Beach boat launch (~8 miles from the turnoff). Rentals available at Backwoods Adventures downtown.</p>
   </div>
 
   <div class="activity-item">
@@ -599,6 +600,16 @@
   <div class="activity-item">
     <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=McCall+Farmers+Market+McCall+Idaho" target="_blank" rel="noopener noreferrer">McCall Farmers Market</a>
     <p class="activity-desc">Mid-June through September, Wednesdays &amp; Saturdays 10am–1pm at 2nd St. &amp; Lenora St. downtown — free to attend. Grassfed beef and pork, Idaho honey, fresh goat cheese, microgreens, lavender, baked goods, fresh juices, and arts and crafts vendors. Full Moon Ice Cream sets up here on market days — their key lime pie and seasonal flavors are the best in McCall. Worth building a morning around. Not dog-friendly; cash helpful for vendors.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=The+Meanders+North+Fork+Payette+River+McCall+Idaho" target="_blank" rel="noopener noreferrer">The Meanders — Upper North Fork Payette River</a>
+    <p class="activity-desc">McCall's best-kept local secret. A serene, 3-mile stretch of flatwater on the Upper North Fork of the Payette River — no motorized watercraft allowed. Gentle S-curves through lush forest where you're likely to spot deer, elk, eagles, osprey, otters, and the occasional moose. Pack a picnic and stop at the sandy beaches along the way. Access via Warren Wagon Road north of town; put in at the North Beach boat launch (~8 miles from the turnoff). Rentals available at Backwoods Adventures downtown.</p>
+  </div>
+
+  <div class="activity-item">
+    <a class="activity-name" href="https://www.google.com/maps/search/?api=1&query=Shore+Lodge+The+Cove+spa+McCall+Idaho" target="_blank" rel="noopener noreferrer">The Cove Spa at Shore Lodge</a>
+    <p class="activity-desc">Shore Lodge's full-service spa with private outdoor hot springs, saltwater immersion pools, saunas, and steam rooms. The outdoor hot springs are accessible after booking a massage, facial, or body treatment — and are particularly special in winter when snow is falling around you and Payette Lake is in the background. Worth booking in advance; treatments fill up quickly on weekends and during Winter Carnival.</p>
   </div>
 </div>
 
@@ -802,7 +813,7 @@
 
   <div class="day-card">
     <div class="day-header">Day 2 · Tue, Aug 18</div>
-    <div class="day-title">Sunset Cruise</div>
+    <div class="day-title">Ponderosa State Park + Sunset Cruise</div>
     <div class="day-body">
       <ul>
         <li>Breakfast at the house followed by a visit to Ponderosa State Park to take a stroll and check out the scenic overlook</li>
@@ -816,7 +827,7 @@
 
   <div class="day-card">
     <div class="day-header">Day 3 · Wed, Aug 19</div>
-    <div class="day-title">Farmers Market</div>
+    <div class="day-title">Farmers Market + Shopping</div>
     <div class="day-body">
       <ul>
         <li>Morning at McCall Farmers Market, runs 10am–1pm</li>
@@ -829,7 +840,7 @@
 
   <div class="day-card">
     <div class="day-header">Day 4 · Thu, Aug 20</div>
-    <div class="day-title">Dinner on the Patio at Cutwater</div>
+    <div class="day-title">Dinner on the Lake</div>
     <div class="day-body">
       <ul>
         <li>Free day — beach time, hiking, games</li>
@@ -854,7 +865,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <a href="https://travelcuratedbycolby.com" target="_blank" rel="noopener noreferrer">travelcuratedbycolby.com</a>
+  Travel Curated by Colby
 </footer>
 
 <script>
